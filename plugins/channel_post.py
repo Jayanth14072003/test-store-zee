@@ -44,7 +44,7 @@ async def channel_post(client: Client, message: Message):
     ena=str(re.findall(r"E\d+",str(message.video.file_name)))
     en=str(re.findall(r"\d+",ena))
     dm ={"Jan":"01","Feb":"02","Mar":"03","Apr":"04","May":"05","Jun":"06","Jul":"07","Aug":"08","Sep":"09","Oct":"10","Nov":"11","Dec":"12"}
-    reply_text = await message.reply_photo(photo=fun(en)[0],caption="Please wait...")
+    reply_text = await message.reply_photo(photo=fun(en)[0],caption=f"Please wait...{en}")
     date = fun(en)[2]
     month = fun(en)[1][2:-6]+"-"+dm[date]+"- 2023"
     try:
